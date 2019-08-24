@@ -54,7 +54,10 @@ fieldset {
     margin: 0;
 }
 
-input {
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="submit"] {
     margin: 10px auto;
     display: inline-block;
     padding: 12px;
@@ -121,19 +124,24 @@ a:visited {
     .signup {
         padding: $mobile_padding;
     }
-}
 
-.button_primary {
-    background-color: $accent_primary;
-    color: #f0f0f0;
-    font-size: 1.2rem;
-    margin: $mobile_margin;
-}
+    .button_primary {
+        background-color: $accent_primary;
+        color: #f0f0f0;
+        font-size: 1.2rem;
+        margin: $mobile_margin;
+    }
 
-.privacy-message {
-    margin: 5px auto;
-}
+    .newsletter-signup {
+        margin: 10px auto;
 
-.read-more {
-    margin: 5px auto;
+    }
+
+    .privacy-message {
+        margin: 10px auto;
+    }
+
+    .read-more {
+        margin: 5px auto;
+    }
 }

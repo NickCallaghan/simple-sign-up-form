@@ -40,7 +40,10 @@ fieldset {
   margin: 0;
 }
 
-input {
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="submit"] {
   margin: 10px auto;
   display: inline-block;
   padding: 12px;
@@ -110,18 +113,22 @@ a:visited {
   padding: 8px 25px;
 }
 
-.button_primary {
+.form-container .button_primary {
   background-color: #009e74;
   color: #f0f0f0;
   font-size: 1.2rem;
   margin: 15px auto;
 }
 
-.privacy-message {
-  margin: 5px auto;
+.form-container .newsletter-signup {
+  margin: 10px auto;
 }
 
-.read-more {
+.form-container .privacy-message {
+  margin: 10px auto;
+}
+
+.form-container .read-more {
   margin: 5px auto;
 }
 /*# sourceMappingURL=style.css.map */
