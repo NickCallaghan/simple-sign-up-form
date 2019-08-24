@@ -39,16 +39,6 @@ function validateInput(e) {
         }
     }
 
-    function inputIsEmpty(input) {
-        console.log(input.value);
-        if (input.value === "") {
-            return true;
-        } else {
-            return false;
-        }
-
-    }
-
     if (input.name === 'name') {
         validateName(input, errorDiv);
     }
