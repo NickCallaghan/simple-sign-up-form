@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Sign Up Form With Validation</title>
+
+</head>
+
+<body>
+
+    <div class="top-bar">
+
+        <h1>Simple sign-up form with validation</h1>
+
+    </div>
+
+    <div class="form-container">
+
+        <div class="login-banner">
+
+            Have an account? <a href="#">Log in</a>
+
+        </div>
+
+        <h2>Sign-Up</h2>
+
+
+        <form class="signup" action="index.html">
+
+            <fieldset>
+                <label class="hide" for="name">First Name</label>
+                <div class="error"></div>
+                <input type="text" name="name" id="name" placeholder="Name">
+            </fieldset>
+
+
+            <fieldset>
+                <label class="hide" for="email">Email</label>
+                <div class="error"></div>
+                <input type="email" id="email" name="email" placeholder="Email">
+            </fieldset>
+
+            <fieldset>
+                <label class="hide" for="password">password</label>
+                <div class="error"></div>
+                <input type="password" id="password" name="password" placeholder="Password">
+            </fieldset>
+
+            <fieldset>
+
+                <input type="checkbox" id="newsletter-signup">
+                <label class="inline" for="newsletter-signup">Receive a weekly mix of handpicked projects, plus
+                    occasional news.</label>
+            </fieldset>
+
+            <fieldset>
+                <input type="submit" name="submit" class="button_primary value=" Create Account">
+            </fieldset>
+
+            <div class="privacy-message">By signing up, you agree to our <a href="#">terms of use</a>, <a
+                    href="#">privacy policy</a>, and <a href="#">cookie policy</a>.
+            </div>
+
+            <div class="read-more">
+
+                <a href="#">Read more</a>
+
+            </div>
+
+
+        </form>
+
+
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

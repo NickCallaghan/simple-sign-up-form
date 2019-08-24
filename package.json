@@ -1,0 +1,11 @@
+{
+  "name": "simple-sign-up-form",
+  "version": "1.0.0",
+  "description": "Simple sign up form with basic validation",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nick Callaghan",
+  "license": "MIT"
+}

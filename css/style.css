@@ -1,0 +1,126 @@
+/***********************************************/
+/*           Fonts and Variables               */
+/***********************************************/
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Fredoka+One&display=swap");
+/***********************************************/
+/*                   Base Styles               */
+/***********************************************/
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.hide {
+  display: none;
+}
+
+.inline {
+  display: inline;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+  min-width: 320px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 400;
+}
+
+fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+input {
+  margin: 10px auto;
+  display: inline-block;
+  padding: 12px;
+  width: 100%;
+  font-size: 0.9rem;
+}
+
+.error {
+  padding: 8px 25px;
+  color: red;
+  font-weight: bold;
+}
+
+a:link,
+a:visited {
+  color: #4C6CF8;
+}
+
+/***********************************************/
+/*                Custom Styles                */
+/***********************************************/
+.top-bar {
+  background-color: white;
+  color: #009e74;
+  margin: 0 0 15px 0;
+  padding: 10px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.top-bar h1 {
+  margin: 0;
+  padding: 8px 25px;
+  font-size: 1.5rem;
+  font-family: 'Fredoka One', cursive;
+}
+
+.login-banner {
+  background-color: #fcfcfb;
+  padding: 20px 0;
+  border-bottom: 1px solid #bababa;
+  text-align: center;
+}
+
+.form-container {
+  background-color: white;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.form-container h2 {
+  margin-left: 25px;
+  margin-bottom: 10px;
+  font-size: 1.8rem;
+  font-weight: 400;
+}
+
+.form-container .signup {
+  padding: 8px 25px;
+}
+
+.button_primary {
+  background-color: #009e74;
+  color: #f0f0f0;
+  font-size: 1.2rem;
+  margin: 15px auto;
+}
+
+.privacy-message {
+  margin: 5px auto;
+}
+
+.read-more {
+  margin: 5px auto;
+}
+/*# sourceMappingURL=style.css.map */

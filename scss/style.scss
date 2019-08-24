@@ -1,0 +1,138 @@
+/***********************************************/
+/*           Fonts and Variables               */
+/***********************************************/
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Fredoka+One&display=swap');
+
+
+$muted : #f0f0f0;
+$accent_primary: #009e74;
+$accent_secondary: #4C6CF8;
+$grey: #fcfcfb;
+$silver: #bababa;
+
+$mobile_padding: 8px 25px;
+$mobile_margin: 15px auto;
+
+/***********************************************/
+/*                   Base Styles               */
+/***********************************************/
+
+* {
+    box-sizing: border-box;
+}
+
+.hide {
+    display: none;
+}
+
+.inline {
+    display: inline;
+}
+
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: $muted;
+    margin: 0;
+    padding: 0;
+    min-width: 320px;
+
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-weight: 400;
+}
+
+fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+input {
+    margin: 10px auto;
+    display: inline-block;
+    padding: 12px;
+    width: 100%;
+    font-size: 0.9rem;
+}
+
+.error {
+    padding: $mobile_padding;
+    color: red;
+    font-weight: bold;
+}
+
+a:link,
+a:visited {
+    color: $accent_secondary;
+}
+
+/***********************************************/
+/*                Custom Styles                */
+/***********************************************/
+
+.top-bar {
+    background-color: white;
+    color: $accent_primary;
+    margin: 0 0 15px 0;
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+    h1 {
+        margin: 0;
+        padding: $mobile_padding;
+        font-size: 1.5rem;
+        font-family: 'Fredoka One',
+            cursive;
+
+    }
+
+}
+
+.login-banner {
+    background-color: $grey;
+    padding: 20px 0;
+    border-bottom: 1px solid $silver;
+    text-align: center;
+}
+
+.form-container {
+    background-color: white;
+    max-width: 90%;
+    margin: 0 auto;
+
+    h2 {
+        margin-left: 25px;
+        margin-bottom: 10px;
+        font-size: 1.8rem;
+        font-weight: 400;
+    }
+
+    .signup {
+        padding: $mobile_padding;
+    }
+}
+
+.button_primary {
+    background-color: $accent_primary;
+    color: #f0f0f0;
+    font-size: 1.2rem;
+    margin: $mobile_margin;
+}
+
+.privacy-message {
+    margin: 5px auto;
+}
+
+.read-more {
+    margin: 5px auto;
+}
