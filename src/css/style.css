@@ -52,7 +52,8 @@ input[type="submit"] {
 }
 
 .error {
-  padding: 8px 25px;
+  padding: 0;
+  margin: 0;
   color: red;
   font-weight: bold;
 }
@@ -88,18 +89,18 @@ a:visited {
   font-family: 'Fredoka One', cursive;
 }
 
-.login-banner {
-  background-color: #fcfcfb;
-  padding: 20px 0;
-  border-bottom: 1px solid #bababa;
-  text-align: center;
-}
-
 .form-container {
   background-color: white;
   width: 600px;
   max-width: 90%;
   margin: 50px auto;
+}
+
+.form-container .login-banner {
+  background-color: #fcfcfb;
+  padding: 20px 0;
+  border-bottom: 1px solid #bababa;
+  text-align: center;
 }
 
 .form-container h2 {
@@ -109,7 +110,7 @@ a:visited {
   font-weight: 400;
 }
 
-.form-container .signup {
+.form-container form.signup {
   padding: 8px 25px;
 }
 
@@ -118,6 +119,13 @@ a:visited {
   color: #f0f0f0;
   font-size: 1.2rem;
   margin: 15px auto;
+  cursor: pointer;
+}
+
+.form-container .button_primary[disabled] {
+  background-color: #fcfcfb;
+  color: #009e74;
+  cursor: default;
 }
 
 .form-container .newsletter-signup {

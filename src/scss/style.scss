@@ -66,7 +66,8 @@ input[type="submit"] {
 }
 
 .error {
-    padding: $mobile_padding;
+    padding: 0;
+    margin: 0;
     color: red;
     font-weight: bold;
 }
@@ -101,18 +102,18 @@ a:visited {
 
 }
 
-.login-banner {
-    background-color: $grey;
-    padding: 20px 0;
-    border-bottom: 1px solid $silver;
-    text-align: center;
-}
-
 .form-container {
     background-color: white;
     width: 600px;
     max-width: 90%;
     margin: 50px auto;
+
+    .login-banner {
+        background-color: $grey;
+        padding: 20px 0;
+        border-bottom: 1px solid $silver;
+        text-align: center;
+    }
 
     h2 {
         margin-left: 25px;
@@ -121,7 +122,7 @@ a:visited {
         font-weight: 400;
     }
 
-    .signup {
+    form.signup {
         padding: $mobile_padding;
     }
 
@@ -130,6 +131,14 @@ a:visited {
         color: #f0f0f0;
         font-size: 1.2rem;
         margin: $mobile_margin;
+        cursor: pointer;
+
+    }
+
+    .button_primary[disabled] {
+        background-color: $grey;
+        color: $accent_primary;
+        cursor: default;
     }
 
     .newsletter-signup {

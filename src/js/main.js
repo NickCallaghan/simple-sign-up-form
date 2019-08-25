@@ -56,7 +56,19 @@ function formSubmitted(e) {
     const formObject = form.getBoundingClientRect();
     form.style.height = `${formObject.height}px`;
 
-    form.innerHTML = `<h2>Thanks for sigining up</h2>`;
+    function displaySubmitMessage(form) {
+        const xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                // Typical action to be performed when the document is ready:
+                form.innerHTML = xhttp.responseText;
+            }
+        };
+        xhttp.open("GET", "./../submitted.html", true);
+        xhttp.send();
+    }
+
+    displaySubmitMessage(form);
 }
 
 const inputsElements = document.querySelectorAll('input');

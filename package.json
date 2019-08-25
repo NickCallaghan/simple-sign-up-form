@@ -4,8 +4,13 @@
   "description": "Simple sign up form with basic validation",
   "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "parcel src/index.html",
+    "build": "parcel build src/index.html"
   },
   "author": "Nick Callaghan",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.3",
+    "sass": "^1.22.10"
+  }
 }
