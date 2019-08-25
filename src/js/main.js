@@ -1,67 +1,48 @@
 function toggleSubmit() {
     const submitButton = document.querySelector('input[type="submit"]');
-
-    if (submitButton.getAttribute('disabled') !== true) {
-        submitButton.setAttribute("disabled", "true");
-    } else {
-        submitButton.setAttribute("disabled", "false");
+    if (submitButton.disabled) {
+       submitButton.disabled = !submitButton.disabled
     }
 }
 
-function validateInput(e) {
-    const input = e.target;
-    const errorDiv = input.previousElementSibling;
+function validateForm() {
+    const name = document.querySelector('#name');
+    const email = document.querySelector('#email');
+    const password = document.querySelector('#password');
 
-    function validName(input, errorDiv) {
+    function validName(input) {
         const regex = /^[a-z]+(([',. -][a-z])?[a-z]*)*$/ig
-        if (input.value.length === 0) {
-            errorDiv.innerHTML = "";
-            return false
-        }
-        if (!regex.test(input.value)) {
-            errorDiv.innerHTML = "Your name may only a-z,.'- and must not end in a space";
-            return false
-        } else {
-            errorDiv.innerHTML = "";
+        
+        if (regex.test(input.value)) {
             return true
+        } else {
+            return false;
         }
-
     }
 
-    function validEmail(input, errorDiv) {
+    function validEmail(input) {
         const regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/i;
-        console.log(input.value.length);
-        if (!regex.test(input.value)) {
-            errorDiv.innerHTML = "Your email address is invalid";
+
+        if (regex.test(input.value)) {
+            return true;
         } else {
-            errorDiv.innerHTML = "";
-        }
-        if (input.value.length === 0) {
-            errorDiv.innerHTML = "";
-        }
+            return false;
+        } 
     }
 
-    function validPassword(input, errorDiv) {
+    function validPassword(input) {
         const regex = /^[A-Za-z]\w{7,14}$/;
-        if (!regex.test(input.value)) {
-            errorDiv.innerHTML = "Your password must be between 6 to 20 characters which contain at least one numeric digit, one uppercase and one lowercase letter";
+
+        if (regex.test(input.value)) {
+            return true;
         } else {
-            errorDiv.innerHTML = "";
-        }
-        if (input.value.length === 0) {
-            errorDiv.innerHTML = "";
-        }
+            return false;
+        } 
     }
 
-    if (input.name === 'name') {
-        validName(input, errorDiv);
-    }
-    if (input.name === 'email') {
-        validEmail(input, errorDiv);
-    }
-    if (input.name === 'password') {
-        validPassword(input, errorDiv);
-    }
+    if (validName(name) && validEmail(email) && validPassword(password)){
+        toggleSubmit();
+    }   
 }
 
 function formSubmitted(e) {
@@ -86,11 +67,11 @@ function formSubmitted(e) {
 
 const inputsElements = document.querySelectorAll('input');
 const form = document.querySelector('form.signup');
-toggleSubmit();
+
 
 inputsElements.forEach(input => {
-    if (input.type === "text" | input.type === "email" | input.type === "password") {
-        input.addEventListener('change', validateInput);
+    if (input.type === "text" || input.type === "email" || input.type === "password") {
+        input.addEventListener('change', validateForm);
     };
 });
 
