@@ -1,3 +1,5 @@
+// Simple form validation example
+
 function validateForm() {
     const name = document.querySelector('#name');
     const email = document.querySelector('#email');
@@ -27,7 +29,7 @@ function validateForm() {
         } else {
             displayValidationFeedback(input, false, invalidMessage);
             return false;
-        } 
+        }
     }
 
     function validPassword(input) {
@@ -40,23 +42,23 @@ function validateForm() {
         } else {
             displayValidationFeedback(input, false, invalidMessage);
             return false;
-        } 
+        }
     }
 
-    function checkEnableForm(){
-        if (name.valid && email.valid && password.valid){
+    function checkEnableForm() {
+        if (name.valid && email.valid && password.valid) {
             submitButton.disabled = false;
         } else {
             submitButton.disabled = true;
         }
     }
 
-    function displayValidationFeedback(input, validBool, message,){
-        const errorDiv = input.previousElementSibling; 
-        
-        if(input.value.length === 0 || validBool === true ){
+    function displayValidationFeedback(input, validBool, message, ) {
+        const errorDiv = input.previousElementSibling;
+
+        if (input.value.length === 0 || validBool === true) {
             errorDiv.textContent = "";
-        } else{
+        } else {
             errorDiv.textContent = message;
         }
     }
