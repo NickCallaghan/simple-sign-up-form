@@ -1,48 +1,70 @@
-function toggleSubmit() {
-    const submitButton = document.querySelector('input[type="submit"]');
-    if (submitButton.disabled) {
-       submitButton.disabled = !submitButton.disabled
-    }
-}
-
 function validateForm() {
     const name = document.querySelector('#name');
     const email = document.querySelector('#email');
     const password = document.querySelector('#password');
+    const submitButton = document.querySelector('input[type="submit"]');
 
     function validName(input) {
         const regex = /^[a-z]+(([',. -][a-z])?[a-z]*)*$/ig
-        
+        const invalidMessage = "Name is not valid";
+
         if (regex.test(input.value)) {
+            displayValidationFeedback(input, true)
             return true
         } else {
+            displayValidationFeedback(input, false, invalidMessage)
             return false;
         }
     }
 
     function validEmail(input) {
         const regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/i;
+        const invalidMessage = "Email address is not valid";
 
         if (regex.test(input.value)) {
+            displayValidationFeedback(input, true)
             return true;
         } else {
+            displayValidationFeedback(input, false, invalidMessage);
             return false;
         } 
     }
 
     function validPassword(input) {
         const regex = /^[A-Za-z]\w{7,14}$/;
+        const invalidMessage = "Password must contain at lease 8 characters and include an uppercase letter and a number";
 
         if (regex.test(input.value)) {
+            displayValidationFeedback(input, true)
             return true;
         } else {
+            displayValidationFeedback(input, false, invalidMessage);
             return false;
         } 
     }
 
-    if (validName(name) && validEmail(email) && validPassword(password)){
-        toggleSubmit();
-    }   
+    function checkEnableForm(){
+        if (name.valid && email.valid && password.valid){
+            submitButton.disabled = false;
+        } else {
+            submitButton.disabled = true;
+        }
+    }
+
+    function displayValidationFeedback(input, validBool, message,){
+        const errorDiv = input.previousElementSibling; 
+        
+        if(input.value.length === 0 || validBool === true ){
+            errorDiv.textContent = "";
+        } else{
+            errorDiv.textContent = message;
+        }
+    }
+
+    name.valid = validName(name);
+    email.valid = validEmail(email);
+    password.valid = validPassword(password);
+    checkEnableForm()
 }
 
 function formSubmitted(e) {
@@ -59,7 +81,7 @@ function formSubmitted(e) {
                 form.innerHTML = xhttp.responseText;
             }
         };
-        xhttp.open("GET", "./../submitted.html", true);
+        xhttp.open("GET", "./submitted.html", true);
         xhttp.send();
     }
     displaySubmitMessage(form);
